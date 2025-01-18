@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pointx/providers/auth_provider.dart';
+import 'package:pointx/screens/login_screen.dart';
+import 'package:pointx/screens/otp_screen.dart';
 import 'package:pointx/screens/username_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -30,6 +32,10 @@ class MyApp extends StatelessWidget {
           textTheme: GoogleFonts.poppinsTextTheme(),
         ),
         home: UsernameScreen(),
+        routes: {
+          '/login': (context) => const LoginScreen(),
+          '/otp': (context) => const OtpScreen(),
+        },
       ),
     );
   }

@@ -1,21 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pointx/providers/auth_provider.dart';
-import 'package:provider/provider.dart';
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
-class UsernameScreen extends StatefulWidget {
-  const UsernameScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<UsernameScreen> createState() => _UsernameScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _UsernameScreenState extends State<UsernameScreen> {
-  final usernameController = TextEditingController();
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: const Color(0xFF0D1127),
+      appBar: AppBar(
+        backgroundColor: Color(0xFF614FA8),
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+      ),
       body: Container(
         decoration: const BoxDecoration(
           color: Color(0xFF614FA8),
@@ -29,12 +36,12 @@ class _UsernameScreenState extends State<UsernameScreen> {
               child: Transform.scale(
                 scale: 0.8,
                 child: Image.asset(
-                  'assets/username.png',
+                  'assets/phone.png',
                 ),
               ),
             ),
             Positioned(
-              top: 440,
+              top: 350,
               left: 0,
               right: 0,
               child: Container(
@@ -63,7 +70,7 @@ class _UsernameScreenState extends State<UsernameScreen> {
                         height: 20,
                       ),
                       Text(
-                        'Enter your username to continue',
+                        'Enter your phone number to continue',
                         style: TextStyle(
                           fontSize: 15,
                           color: Colors.black,
@@ -76,24 +83,55 @@ class _UsernameScreenState extends State<UsernameScreen> {
                       ),
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(
-                            // ignore: deprecated_member_use
-                            color: Colors.black.withOpacity(0.2),
-                            width: 1,
-                          ),
-                        ),
-                        child: TextField(
-                          controller: usernameController,
-                          decoration: InputDecoration(
-                            hintText: 'Username',
-                            hintStyle: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 15,
-                              fontFamily: GoogleFonts.poppins().fontFamily,
+                          color: const Color.fromRGBO(255, 255, 255, 0.25),
+                          borderRadius: BorderRadius.circular(12),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Color.fromRGBO(113, 99, 186, .1),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset: Offset(0, 3),
                             ),
-                            contentPadding: const EdgeInsets.all(10),
+                          ],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: InternationalPhoneNumberInput(
+                            textStyle: const TextStyle(
+                              color: Colors.black,
+                            ),
+                            hintText: 'Phone Number',
+                            cursorColor: Colors.black,
+                            inputDecoration: const InputDecoration(
+                              border: InputBorder.none,
+                              hintText: 'Phone Number',
+                              hintStyle: TextStyle(
+                                color: Colors.grey,
+                              ),
+                            ),
+                            onInputChanged: (PhoneNumber number) {
+                              // ignore: avoid_print
+                              print(number.phoneNumber);
+                            },
+                            selectorConfig: const SelectorConfig(
+                              selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
+                              // leadingPadding: 10,
+                              useEmoji: true,
+                            ),
+                            ignoreBlank: false,
+                            selectorTextStyle:
+                                const TextStyle(color: Colors.black),
+                            initialValue: PhoneNumber(isoCode: 'IN'),
+                            textFieldController: TextEditingController(),
+                            formatInput: false,
+                            keyboardType:
+                                const TextInputType.numberWithOptions(),
+                            onSaved: (PhoneNumber number) {
+                              // ignore: avoid_print
+                              print('On Saved: $number');
+                            },
+                            spaceBetweenSelectorAndTextField: 0,
+                            inputBorder: InputBorder.none,
                           ),
                         ),
                       ),
@@ -104,9 +142,7 @@ class _UsernameScreenState extends State<UsernameScreen> {
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: () {
-                            Provider.of<Auth>(context, listen: false)
-                                .toggleUsername(usernameController.text);
-                            Navigator.pushNamed(context, '/login');
+                            Navigator.pushNamed(context, '/otp');
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFF614FA8),
