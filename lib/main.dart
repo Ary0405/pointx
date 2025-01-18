@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pointx/providers/auth_provider.dart';
+import 'package:pointx/screens/logged_in_screen.dart';
 import 'package:pointx/screens/login_screen.dart';
 import 'package:pointx/screens/otp_screen.dart';
 import 'package:pointx/screens/username_screen.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/login': (context) => const LoginScreen(),
           '/otp': (context) => const OtpScreen(),
+          '/logged_in': (context) => const LoggedInScreen(),
         },
       ),
     );

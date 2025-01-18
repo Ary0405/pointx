@@ -13,16 +13,6 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xFF614FA8),
-        elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        ),
-      ),
       body: Container(
         decoration: const BoxDecoration(
           color: Color(0xFF614FA8),
@@ -30,18 +20,17 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Stack(
           children: [
             Positioned(
-              top: 15,
               left: 0,
               right: 0,
               child: Transform.scale(
-                scale: 0.8,
+                scale: 0.9,
                 child: Image.asset(
                   'assets/phone.png',
                 ),
               ),
             ),
             Positioned(
-              top: 350,
+              top: 380,
               left: 0,
               right: 0,
               child: Container(
@@ -152,6 +141,31 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           child: Text(
                             'Continue',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontFamily: GoogleFonts.poppins().fontFamily,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xFF614FA8),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                          child: Text(
+                            'Back',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 15,
