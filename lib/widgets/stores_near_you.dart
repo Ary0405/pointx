@@ -34,7 +34,13 @@ class StoresNearYou extends StatelessWidget {
               children: storeData
                   .map(
                     (e) => InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          '/store_details',
+                          arguments: e,
+                        );
+                      },
                       child: Padding(
                         padding: EdgeInsets.only(
                           left: MediaQuery.of(context).size.width * 0.04,

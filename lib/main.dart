@@ -4,6 +4,9 @@ import 'package:pointx/providers/auth_provider.dart';
 import 'package:pointx/screens/logged_in_screen.dart';
 import 'package:pointx/screens/login_screen.dart';
 import 'package:pointx/screens/otp_screen.dart';
+import 'package:pointx/screens/select_store_screen.dart';
+import 'package:pointx/screens/store_details_screen.dart';
+import 'package:pointx/screens/success_screen.dart';
 import 'package:pointx/screens/username_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -37,6 +40,9 @@ class MyApp extends StatelessWidget {
           '/login': (context) => const LoginScreen(),
           '/otp': (context) => const OtpScreen(),
           '/logged_in': (context) => const LoggedInScreen(),
+          '/select_store': (context) => const SelectStoreScreen(),
+          '/success': (context) => const SuccessScreen(),
+          '/store_details': (context) => const StoreDetailsScreen(),
         },
       ),
     );

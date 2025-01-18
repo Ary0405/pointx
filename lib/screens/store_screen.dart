@@ -1,7 +1,4 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:pointx/widgets/exciting_offers.dart';
 import 'package:pointx/widgets/expiring_offers.dart';
 import 'package:pointx/widgets/stores_near_you.dart';
