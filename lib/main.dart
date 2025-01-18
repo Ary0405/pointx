@@ -14,6 +14,14 @@ void main() {
   runApp(const MyApp());
 }
 
+class NoGlowOnScroll extends ScrollBehavior {
+  @override
+  Widget buildOverscrollIndicator(
+      BuildContext context, Widget child, ScrollableDetails details) {
+    return child;
+  }
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
