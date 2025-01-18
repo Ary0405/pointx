@@ -16,14 +16,6 @@ class StoreDetailsScreen extends StatelessWidget {
       body: Container(
         //graident
         decoration: const BoxDecoration(
-          // gradient: LinearGradient(
-          //   begin: Alignment.topLeft,
-          //   end: Alignment.bottomRight,
-          //   // colors: [
-          //   //   Color(0xFF0D1325),
-          //   //   Color.fromARGB(255, 43, 51, 80),
-          //   // ],
-          // ),
         ),
         child: SafeArea(
           child: Padding(
@@ -38,7 +30,7 @@ class StoreDetailsScreen extends StatelessWidget {
                       child: const Icon(
                         Icons.arrow_back_ios,
                         size: 30,
-                        color: Colors.white,
+                        color: Colors.black,
                       ),
                     ),
                     // rounded image
@@ -49,7 +41,7 @@ class StoreDetailsScreen extends StatelessWidget {
                         shape: BoxShape.circle,
                         image: DecorationImage(
                           image: NetworkImage(
-                              "https://avatars.githubusercontent.com/u/41837037?v=4"),
+                              "https://avatars.githubusercontent.com/u/76778991?v=4"),
                         ),
                       ),
                     ),
@@ -80,8 +72,6 @@ class StoreDetailsScreen extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      const SizedBox(height: 10),
-                      Image.asset('assets/walmart-outline-logo.png',height: 100, width: 100,),
                       const SizedBox(height: 10),
                       Text(
                         '${args.points.toString()} points',
@@ -115,7 +105,7 @@ class StoreDetailsScreen extends StatelessWidget {
                             horizontal: 24, vertical: 0),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: Color.fromARGB(255, 34, 59, 136),
+                          color: Color(0xff7163BA),
                         ),
                         child: const Center(
                           child: Text(
@@ -136,7 +126,7 @@ class StoreDetailsScreen extends StatelessWidget {
                         ),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: Color.fromARGB(255, 192, 201, 240),
+                          color: Color(0xffC6BBFF),
                         ),
                         child: const Center(
                           child: Text(
@@ -155,7 +145,7 @@ class StoreDetailsScreen extends StatelessWidget {
                             horizontal: 32, vertical: 0),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: Color.fromARGB(255, 192, 201, 240),
+                          color: Color(0xffC6BBFF),
                         ),
                         child: const Center(
                           child: Text(
@@ -174,7 +164,7 @@ class StoreDetailsScreen extends StatelessWidget {
                             horizontal: 32, vertical: 0),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: Color.fromARGB(255, 192, 201, 240),
+                          color: Color(0xffC6BBFF),
                         ),
                         child: const Center(
                           child: Text(
@@ -220,10 +210,10 @@ class StoreDetailsScreen extends StatelessWidget {
                             gradient: perksData[index].locked
                                 ? null
                                 : const LinearGradient(
-                                    begin: Alignment(0.00, -1.00),
+                                    begin: Alignment(0.00, -1.50),
                                     end: Alignment(0, 1),
                                     colors: [
-                                      Color(0xFF212C5D),
+                                      Color(0xFF614FA8),
                                       Color(0xFF161F38)
                                     ],
                                   ),
