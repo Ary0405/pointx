@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pointx/main.dart';
+import 'package:pointx/model/store_model.dart';
 
 class StoreDetailsScreen extends StatelessWidget {
   const StoreDetailsScreen({super.key});
@@ -10,18 +12,18 @@ class StoreDetailsScreen extends StatelessWidget {
     final args = ModalRoute.of(context)!.settings.arguments as StoreModel;
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0D1325),
+      backgroundColor: const Color(0xFFFFFFFF),
       body: Container(
         //graident
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color(0xFF0D1325),
-              Color.fromARGB(255, 43, 51, 80),
-            ],
-          ),
+          // gradient: LinearGradient(
+          //   begin: Alignment.topLeft,
+          //   end: Alignment.bottomRight,
+          //   // colors: [
+          //   //   Color(0xFF0D1325),
+          //   //   Color.fromARGB(255, 43, 51, 80),
+          //   // ],
+          // ),
         ),
         child: SafeArea(
           child: Padding(
@@ -79,7 +81,7 @@ class StoreDetailsScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 10),
-                      Image.asset('assets/walmart-outline-logo.png'),
+                      Image.asset('assets/walmart-outline-logo.png',height: 100, width: 100,),
                       const SizedBox(height: 10),
                       Text(
                         '${args.points.toString()} points',
