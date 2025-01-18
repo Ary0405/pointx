@@ -36,11 +36,11 @@ class _UsernameScreenState extends State<UsernameScreen> {
               ),
             ),
             Positioned(
-              top: 400,
+              top: 440,
               left: 0,
               right: 0,
               child: Container(
-                height: MediaQuery.of(context).size.height * 0.5,
+                height: MediaQuery.of(context).size.height * 0.55,
                 decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
@@ -67,7 +67,7 @@ class _UsernameScreenState extends State<UsernameScreen> {
                       Text(
                         'Enter your username to continue',
                         style: TextStyle(
-                          fontSize: 17,
+                          fontSize: 15,
                           color: Colors.black,
                           fontFamily: GoogleFonts.poppins().fontFamily,
                           fontWeight: FontWeight.w600,
@@ -95,6 +95,29 @@ class _UsernameScreenState extends State<UsernameScreen> {
                               fontFamily: GoogleFonts.poppins().fontFamily,
                             ),
                             contentPadding: const EdgeInsets.all(10),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xFF614FA8),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                          child: Text(
+                            'Continue',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontFamily: GoogleFonts.poppins().fontFamily,
+                            ),
                           ),
                         ),
                       ),
