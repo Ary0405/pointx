@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pointx/main.dart';
+import 'package:pointx/model/store_model.dart';
 
 class StoreDetailsScreen extends StatelessWidget {
   const StoreDetailsScreen({super.key});
